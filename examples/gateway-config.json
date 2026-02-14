@@ -1,0 +1,80 @@
+{
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "anthropic/claude-opus-4-5",
+        "fallbacks": [
+          "anthropic/claude-sonnet-4-5"
+        ]
+      },
+      "memorySearch": {
+        "enabled": true,
+        "sources": ["memory", "sessions"]
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 4
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "comment": "Strategic Partner - User facing",
+        "subagents": {
+          "allowAgents": ["goldie-agent", "architect-agent"]
+        }
+      },
+      {
+        "id": "goldie-agent",
+        "comment": "Orchestrator - Chief of Staff",
+        "model": {
+          "primary": "anthropic/claude-sonnet-4-5"
+        },
+        "subagents": {
+          "allowAgents": [
+            "research-agent",
+            "content-agent", 
+            "technical-agent",
+            "strategy-agent",
+            "architect-agent"
+          ]
+        }
+      },
+      {
+        "id": "architect-agent",
+        "comment": "Meta-Agent - System Evolution",
+        "model": {
+          "primary": "anthropic/claude-opus-4-5"
+        }
+      },
+      {
+        "id": "research-agent",
+        "comment": "Specialist - Research & Analysis",
+        "model": {
+          "primary": "anthropic/claude-sonnet-4-5"
+        }
+      },
+      {
+        "id": "content-agent",
+        "comment": "Specialist - Writing & Communication",
+        "model": {
+          "primary": "anthropic/claude-sonnet-4-5"
+        }
+      },
+      {
+        "id": "technical-agent",
+        "comment": "Specialist - Engineering",
+        "model": {
+          "primary": "anthropic/claude-sonnet-4-5"
+        }
+      },
+      {
+        "id": "strategy-agent",
+        "comment": "Specialist - High-stakes Strategy (Opus for complex reasoning)",
+        "model": {
+          "primary": "anthropic/claude-opus-4-5"
+        }
+      }
+    ]
+  }
+}
