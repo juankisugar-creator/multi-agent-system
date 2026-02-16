@@ -156,6 +156,9 @@ Use OpenClaw's cron system to schedule:
 | **Content** | Writing & communication | Sonnet 4.5 | Goldie |
 | **Technical** | Engineering & implementation | Sonnet 4.5 | Goldie |
 | **Strategy** | High-stakes strategic analysis | Opus 4.5 | Goldie |
+| **Product** | Product strategy & definition | Opus 4.5 | Goldie |
+| **Marketing** | Positioning & launch strategy | Sonnet 4.5 | Goldie |
+| **DFDV Intern** | Social execution (@dfdv_intern) | Sonnet 4.5 | Goldie |
 
 ---
 
